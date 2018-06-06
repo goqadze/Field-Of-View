@@ -84,15 +84,17 @@ public class FieldOfView : MonoBehaviour
 
             if (i > 0)
             {
-                bool edgeDistanceThresholdExceeded = Mathf.Abs(oldViewCast.distance - newViewCast.distance) > edgeDistanceThreshold; 
+                bool edgeDistanceThresholdExceeded = Mathf.Abs(oldViewCast.distance - newViewCast.distance) > edgeDistanceThreshold;
                 if (oldViewCast.hit != newViewCast.hit || (oldViewCast.hit && newViewCast.hit && edgeDistanceThresholdExceeded))
                 {
                     EdgeInfo edge = FindEdge(oldViewCast, newViewCast);
-                    if (edge.pointA != Vector3.zero) {
+                    if (edge.pointA != Vector3.zero)
+                    {
                         viewPoints.Add(edge.pointA);
                     }
 
-                    if (edge.pointB != Vector3.zero) {
+                    if (edge.pointB != Vector3.zero)
+                    {
                         viewPoints.Add(edge.pointB);
                     }
                 }
